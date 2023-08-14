@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('temperatures', function (Blueprint $table) {
+        Schema::create('reservoirs', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('celcius');
+            $table->string('level');
+            $table->integer('cm');
             $table->string('status');
             $table->timestamps();
         });
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('temperatures');
+        Schema::dropIfExists('reservoirs');
     }
 };
